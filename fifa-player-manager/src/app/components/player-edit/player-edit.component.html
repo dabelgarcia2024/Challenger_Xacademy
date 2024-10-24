@@ -1,0 +1,57 @@
+<div class="edit-form">
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+      <!-- Nombre -->
+      <div>
+        <label for="name">Name</label>
+        <input id="name" formControlName="name" />
+      </div>
+  
+      <!-- Posición -->
+      <div>
+        <label for="position">Position</label>
+        <input id="position" formControlName="position" />
+      </div>
+  
+      <!-- Club -->
+      <div>
+        <label for="club">Club</label>
+        <input id="club" formControlName="club" />
+      </div>
+  
+      <!-- Calificación -->
+      <div>
+        <label for="rating">Rating</label>
+        <input id="rating" formControlName="rating" type="number" />
+      </div>
+  
+      <!-- Nacionalidad -->
+      <div>
+        <label for="nationality">Nationality</label>
+        <input id="nationality" formControlName="nationality" />
+      </div>
+  
+      <!-- Skills -->
+      <div formGroupName="skills">
+        <label for="pace">Pace</label>
+        <input id="pace" formControlName="pace" type="number" />
+  
+        <label for="shooting">Shooting</label>
+        <input id="shooting" formControlName="shooting" type="number" />
+  
+        <label for="passing">Passing</label>
+        <input id="passing" formControlName="passing" type="number" />
+  
+        <label for="dribbling">Dribbling</label>
+        <input id="dribbling" formControlName="dribbling" type="number" />
+  
+        <label for="defending">Defending</label>
+        <input id="defending" formControlName="defending" type="number" />
+  
+        <label for="physical">Physical</label>
+        <input id="physical" formControlName="physical" type="number" />
+      </div>
+  
+      <button type="submit" [disabled]="editForm.invalid">Save</button>
+    </form>
+  </div>
+  

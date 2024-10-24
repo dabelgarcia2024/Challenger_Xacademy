@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./.env
+    depends_on:
+      - db
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "4200:4200"
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: fifa
+      MYSQL_USER: root
+      MYSQL_PASSWORD: tu_contraseña
+      MYSQL_ROOT_PASSWORD: tu_contraseña
+    ports:
+      - "3306:3306"

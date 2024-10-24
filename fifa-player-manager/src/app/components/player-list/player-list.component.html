@@ -1,0 +1,25 @@
+<div class="player-list">
+    <mat-table [dataSource]="players" class="mat-elevation-z8">
+      <!-- Nombre Column -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let player"> {{ player.name }} </mat-cell>
+      </ng-container>
+  
+      <!-- Posición Column -->
+      <ng-container matColumnDef="position">
+        <mat-header-cell *matHeaderCellDef> Position </mat-header-cell>
+        <mat-cell *matCellDef="let player"> {{ player.position }} </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="['name', 'position']"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: ['name', 'position'];"></mat-row>
+    </mat-table>
+  
+    <mat-paginator [length]="totalPlayers"
+                   [pageSize]="pageSize"
+                   [pageSizeOptions]="[5, 10, 20]"
+                   (page)="onPageChange($event)">
+    </mat-paginator>
+  </div>
+  
